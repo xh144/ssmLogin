@@ -2,7 +2,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qf.log.mapper.UserMapper">
-    <select id="queryUser">
+    <!--com.qf.log.model.User-->
+    <select id="query" parameterType="user" resultType="user">
         SELECT * FROM user where uname=#{uname} and upwd=#{upwd}
     </select>
 </mapper>

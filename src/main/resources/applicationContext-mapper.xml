@@ -18,10 +18,11 @@
     </bean>
 
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.qf.log.model"/>
+        <property name="dataSource" ref="dataSource"></property>
         <property name="mapperLocations" value="classpath:com/qf/log/mapper/*Mapper.xml"></property>
+        <property name="typeAliasesPackage" value="com.qf.log.model"></property>
     </bean>
+
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.qf.log.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>

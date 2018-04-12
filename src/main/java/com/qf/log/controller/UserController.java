@@ -15,9 +15,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     @RequestMapping("/log")
     public void login(User user, HttpServletResponse resp) throws IOException {
-        userService.UserLogin(user);
+        user = userService.UserLogin(user);
+        resp.setContentType("text/html;charset=utf-8");
         if (user == null) {
             resp.getWriter().write("登陆失败!");
         } else {
